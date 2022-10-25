@@ -6,7 +6,7 @@
  *  Description: This will reverse a string
  *  Return: 0 is success
  */
-yvoid rev_string(char *s)
+void rev_string(char *s)
 {
 	int a = 0, b, c;
 
