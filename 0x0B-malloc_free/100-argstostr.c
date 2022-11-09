@@ -1,22 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - check the code for ALX School students.
- * Return: Always 0.
+ * argstostr - concatenates all the arguments of your program.
+ * @ac: arguments count
+ * @av: arguments vector
+ * Return: a pointer to a new string, or NULL if it fails
  */
-int main(int ac, char *av[])
+char *argstostr(int ac, char **av)
 {
-	char *s;
+	char *str, *s;
+	int i, j, k, len = 0;
 
-	s = argstostr(ac, av);
-	if (s == NULL)
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
+	for (i = 0; i < ac; i++)
 	{
-
-		return (1);
+		s = av[i];
+		j = 0;
+		while (s[j++])
+			len++;
+		len++;
 	}
-	printf("%s", s);
-	free(s);
-	return (0);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	for (i = 0, j = 0; i < ac && j < len; i++)
+	{
+		s = av[i];
+		k = 0;
+		while (s[k])
+		{
+			str[j] = s[k];
+			k++;
+			j++;
+		}
+
+		str[j++] = '\n';
+	}
+	str[j] = '\0';
+	return (str);
 }
