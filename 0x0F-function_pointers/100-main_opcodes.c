@@ -9,7 +9,7 @@
  */
 void print_opcodes(char *a, int n)
 {
-	0int i;
+	int i;
 	for (i = 0; i < n; i++)
 	{
 		printf("%.2hhx", a[i]);
