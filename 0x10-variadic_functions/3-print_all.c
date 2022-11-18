@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void print_all(const char * const format, ...)
+voiid print_all(const char * const format, ...)
 {
 	int i;
 	int flag;
@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 					printf("%f", va_arg(a_list, double));
 					flag = 0;
 					break;
-			case 's'
+			case 's';
 					str = va_arg(a_list, char*);
 					if (str == NULL)
 						str = "(nil)";
