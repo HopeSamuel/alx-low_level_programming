@@ -25,7 +25,8 @@ listint_t **_ra(listint_t **list, size_t size, listint_t *new)
 		newlist[i] = list[i];
 	newlist[i] = new;
 	free(list);
-	return (newlist);}
+	return (newlist);
+}
 
 
 /**
@@ -44,19 +45,20 @@ size_t free_listint_safe(listint_t **head)
 	while (*head != NULL)
 	{
 		for (i = 0; i < num; i++)
+		{
 			if (*head == list[i])
 			{
 				*head = NULL;
 				free(list);
 				return (num);
 			}
+		}
+		num++;
+		list = _ra(list, num, *head);
+		next = (*head)->next;
+		free(*head);
+		*head = next;
 	}
-	num++;
-	list = _ra(list, num, *head);
-	next = (*head)->next;
-	free(*head);
-	*head = next;
-}
-frree(list);
-return (num);
+	frree(list);
+	return (num);
 }
