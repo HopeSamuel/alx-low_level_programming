@@ -169,7 +169,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
-	char flag = 0; /* 0 before printing any data, 1 after*/
+	char flag = 0; 
+	/* 0 before printing any data,
+	  1 after*/
 	if (ht == NULL || ht->array == NULL)
 		return;
 	printf("{");
@@ -185,14 +187,17 @@ void shash_table_print(const shash_table_t *ht)
 	printf("}\n");
 }
 /**
- * shash_table_print_rev - prints a sorted hash table in reverse
+ * shash_table_print_rev - prints a sorted hash 
+ table in reverse
  * @ht: hash table to print
  * Return: void
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
-	char flag = 0; /* 0 before printing any data, 1 after*/
+	char flag = 0;
+       	/* 0 before printing any 
+ data, 1 after*/
 
 	if (ht == NULL || ht->array == NULL)
 		return;
@@ -219,7 +224,8 @@ void shash_table_delete(shash_table_t *ht)
 	unsigned long int i;
 	shash_node_t *next;
 
-	if (ht == NULL || ht->array == NULL || ht->size == 0)
+	if (ht == NULL || ht->array == NULL || ht->size
+		       	== 0)
 		return;
 	for (i = 0; i < ht->size; i++)
 	{
